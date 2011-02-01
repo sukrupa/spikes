@@ -1,9 +1,9 @@
 package com.thoughtworks.sukrupa.spikes.poi;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class ExcelReadExample {
         // An excel file name. You can create a file name with a full
         // path information.
         //
-        String filename = "..\\data.xls";
+        String filename = "data.xls";
 
         //
         // Create an ArrayList to store the data read from excel sheet.
@@ -37,11 +37,12 @@ public class ExcelReadExample {
             //
             // Create an excel workbook from the file system.
             //
-            HSSFWorkbook workbook = new HSSFWorkbook(fis);
+            XSSFWorkbook workbook = new XSSFWorkbook(fis);
+
             //
             // Get the first sheet on the workbook.
             //
-            HSSFSheet sheet = workbook.getSheetAt(0);
+            XSSFSheet sheet = workbook.getSheetAt(0);
 
             //
             // When we have a sheet object in hand we can iterator on
@@ -51,12 +52,12 @@ public class ExcelReadExample {
             //
             Iterator rows = sheet.rowIterator();
             while (rows.hasNext()) {
-                HSSFRow row = (HSSFRow) rows.next();
+                XSSFRow row = (XSSFRow) rows.next();
                 Iterator cells = row.cellIterator();
 
                 List data = new ArrayList();
                 while (cells.hasNext()) {
-                    HSSFCell cell = (HSSFCell) cells.next();
+                    XSSFCell cell = (XSSFCell) cells.next();
                     data.add(cell);
                 }
 
@@ -70,17 +71,17 @@ public class ExcelReadExample {
             }
         }
 
-        showExelData(sheetData);
+        showExcelData(sheetData);
     }
 
-    private static void showExelData(List sheetData) {
+    private static void showExcelData(List sheetData) {
         //
         // Iterates the data and print it out to the console.
         //
         for (int i = 0; i < sheetData.size(); i++) {
             List list = (List) sheetData.get(i);
             for (int j = 0; j < list.size(); j++) {
-                HSSFCell cell = (HSSFCell) list.get(j);
+                XSSFCell cell = (XSSFCell) list.get(j);
                 System.out.print(
                         cell.getRichStringCellValue().getString());
                 if (j < list.size() - 1) {
