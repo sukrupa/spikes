@@ -1,0 +1,286 @@
+<html>
+
+<head>
+	<style type="text/css">
+		body {font-family:Verdana; }
+		.selector {
+			float:left;		
+		}
+		
+		.multiselect-box {
+			float:left;			
+			margin-bottom:50px;
+			clear:both;
+		}
+		.label {
+			float:left;
+			width:5em;
+			background: #DDDDDD;
+			margin-top:2px;
+		}
+	
+		.options {			
+			float:left;
+			padding-top:4px;
+			padding:3px;
+			clear:both;
+		}
+	   .selected-item {
+			float:left;
+			padding-left:3px;
+			padding-top:3px;
+			padding-bottom:3px;
+			margin-right:5px;
+			border:solid lightgrey 2px;
+	    }
+	
+		.selected-combo-item {
+				float:left;
+				padding-left:3px;
+				padding-top:3px;
+				padding-bottom:3px;
+				margin-right:5px;				
+				clear:both;
+		    }
+		
+		.action {
+			float:left;
+			padding-top:1px;
+			padding-left:5px;
+			padding-right:5px;
+		}
+	    a.remove {  /* becasreful this works in our supprted browsers */
+			padding:2px;
+			margin:2px;
+			text-decoration:none;
+			background:red;
+			color:white;
+			font:bold;
+		}
+		
+		.value-list {
+			float:left;
+		}
+	 </style>	
+</head>
+	
+<body>
+
+
+	<div class="multiselect-box">
+		<div class="label">Talents:</div>		
+		<div class="selector">
+			<div class="options">
+				<select name="talent">
+					<option value="">Add ...</option>
+					<option value="Sports">Sports</option>
+					<option value="Science Club">Science Club</option>
+					<option value="Humanities">Humanities</option>
+					<option value="Creative Writing">Creative Writing</option>
+					<option value="Dancing">Dancing</option>
+					<option value="Debate">Debate</option>
+					<option value="Singing">Singing</option>
+					<option value="Drama">Drama</option>
+					<option value="Musical Instrument">Musical Instrument</option>
+					<option value="Quiz">Quiz</option>
+					<option value="Story Writing">Story Writing</option>
+					<option value="Choir">Choir</option>
+					<option value="Art">Art</option>
+					<option value="Drawing">Drawing</option>
+					<option value="Craft">Craft</option>
+				</select>		
+			</div>
+
+			<div class="value-list">
+
+			</div>
+
+			
+		</div>
+	</div>
+	
+	<div class="multiselect-box">		
+		<div class="label">Talents:</div>				
+		<div class="selector">
+			<div class="options">
+				<select name="talent">
+					<option value="">Add ...</option>
+					<option value="Sports">Sports</option>
+					<option value="Science Club">Science Club</option>
+					<option value="Humanities">Humanities</option>
+					<option value="Creative Writing">Creative Writing</option>
+					<option value="Dancing">Dancing</option>
+					<option value="Debate">Debate</option>
+					<option value="Singing">Singing</option>
+					<option value="Drama">Drama</option>
+					<option value="Musical Instrument">Musical Instrument</option>
+					<option value="Quiz">Quiz</option>
+					<option value="Story Writing">Story Writing</option>
+					<option value="Choir">Choir</option>
+					<option value="Art">Art</option>
+					<option value="Drawing">Drawing</option>
+					<option value="Craft">Craft</option>
+				</select>		
+			</div>
+
+			<div class="value-list">
+				<div class="selected-item">Humanities<a class="remove" href="javascript:" title="Remove Humanities">x</a></div>
+				<div class="selected-item">Debate<a class="remove" href="javascript:" title="Remove Debate">x</a></div>
+				<div class="selected-item">Science<a class="remove" href="javascript:" title="Remove Science">x</a></div>
+			</div>
+
+			
+		</div>
+	</div>
+	
+	
+	<div class="multiselect-box">		
+		<div class="label">Talents:</div>				
+		<div class="selector">
+			<div class="options">
+				<input type="text"></inpu>
+			</div>
+
+			<div class="value-list">
+				<div class="selected-item">Humanities<a class="remove" href="javascript:" title="Remove Humanities">x</a></div>
+				<div class="selected-item">Debate<a class="remove" href="javascript:" title="Remove Debate">x</a></div>
+				<div class="selected-item">Science<a class="remove" href="javascript:" title="Remove Science">x</a></div>
+			</div>
+
+			
+		</div>
+	</div>
+	
+	<div class="multiselect-box">		
+		<div class="label">Talents:</div>				
+		<div class="selector">
+			<div class="value-list">
+				<div class="selected-combo-item">
+					<select class="disabled" name="talent" disabled>				
+						<option value="Humanities">Humanities</option>
+							<option value="Singing">Singing</option>						
+					</select>
+					<a class="remove" href="javascript:" title="Remove Humanities">x</a>
+				</div>
+				<div class="selected-combo-item">
+					<select class="disabled" name="talent" disabled>				
+						<option value="Humanities">Humanities</option>
+							<option value="Singing">Singing</option>
+					</select>
+					<a class="remove" href="javascript:" title="Remove Humanities">x</a>
+				</div>
+				<div class="selected-combo-item">
+					<select class="disabled" name="talent" disabled>				
+						<option value="Humanities">Humanities</option>
+							<option value="Quiz">Quiz</option>
+					</select>
+					<a class="remove" href="javascript:" title="Remove Humanities">x</a>
+				</div>	
+			</div>
+						
+			<div class="options">
+				<select name="talent">				
+					<option value="Humanities">Humanities</option>
+					<option value="Creative Writing">Creative Writing</option>
+					<option value="Dancing">Dancing</option>
+					<option value="Debate">Debate</option>
+					<option value="Singing">Singing</option>
+					<option value="Drama">Drama</option>
+					<option value="Musical Instrument">Musical Instrument</option>
+					<option value="Quiz">Quiz</option>
+					<option value="Story Writing">Story Writing</option>
+					<option value="Choir">Choir</option>
+					<option value="Art">Art</option>
+					<option value="Drawing">Drawing</option>
+					<option value="Craft">Craft</option>
+				</select>		
+			</div>
+
+		</div>
+		
+		<div class="multiselect-box">		
+			<div class="label">Talents:</div>				
+			<div class="selector">
+				<div class="value-list">
+					<div class="selected-combo-item">
+						<select class="disabled" name="talent" >				
+								<option value="Humanities">Humanities</option>
+								<option value="Creative Writing">Creative Writing</option>
+								<option value="Dancing">Dancing</option>
+								<option value="Debate">Debate</option>
+								<option value="Singing">Singing</option>
+								<option value="Drama">Drama</option>
+								<option value="Musical Instrument">Musical Instrument</option>
+								<option value="Quiz">Quiz</option>
+								<option value="Story Writing">Story Writing</option>
+								<option value="Choir">Choir</option>
+								<option value="Art">Art</option>
+								<option value="Drawing">Drawing</option>
+								<option value="Craft">Craft</option>						</select>
+						<a class="remove" href="javascript:" title="Remove Humanities">x</a>
+					</div>
+					<div class="selected-combo-item">
+						<select class="disabled" name="talent" >				
+							<option value="Humanities">Humanities</option>
+									<option value="Humanities">Humanities</option>
+									<option value="Creative Writing">Creative Writing</option>
+									<option value="Dancing">Dancing</option>
+									<option value="Debate">Debate</option>
+									<option value="Singing">Singing</option>
+									<option value="Drama">Drama</option>
+									<option value="Musical Instrument">Musical Instrument</option>
+									<option value="Quiz">Quiz</option>
+									<option value="Story Writing">Story Writing</option>
+									<option value="Choir">Choir</option>
+									<option value="Art">Art</option>
+									<option value="Drawing">Drawing</option>
+									<option value="Craft">Craft</option>
+						</select>
+						<a class="remove" href="javascript:" title="Remove Humanities">x</a>
+					</div>
+					<div class="selected-combo-item">
+						<select class="disabled" name="talent" >				
+							<option value="Humanities">Humanities</option>
+								<option value="Humanities">Humanities</option>
+								<option value="Creative Writing">Creative Writing</option>
+								<option value="Dancing">Dancing</option>
+								<option value="Debate">Debate</option>
+								<option value="Singing">Singing</option>
+								<option value="Drama">Drama</option>
+								<option value="Musical Instrument">Musical Instrument</option>
+								<option value="Quiz">Quiz</option>
+								<option value="Story Writing">Story Writing</option>
+								<option value="Choir">Choir</option>
+								<option value="Art">Art</option>
+								<option value="Drawing">Drawing</option>
+								<option value="Craft">Craft</option>
+						</select>
+						<a class="remove" href="javascript:" title="Remove Humanities">x</a>
+					</div>	
+				</div>
+
+				<div class="options">
+					<select name="talent">				
+						<option value="Humanities">Humanities</option>
+						<option value="Creative Writing">Creative Writing</option>
+						<option value="Dancing">Dancing</option>
+						<option value="Debate">Debate</option>
+						<option value="Singing">Singing</option>
+						<option value="Drama">Drama</option>
+						<option value="Musical Instrument">Musical Instrument</option>
+						<option value="Quiz">Quiz</option>
+						<option value="Story Writing">Story Writing</option>
+						<option value="Choir">Choir</option>
+						<option value="Art">Art</option>
+						<option value="Drawing">Drawing</option>
+						<option value="Craft">Craft</option>
+					</select>		
+				</div>
+
+			</div>
+		
+		
+	</div>
+</body>
+
+</html>
