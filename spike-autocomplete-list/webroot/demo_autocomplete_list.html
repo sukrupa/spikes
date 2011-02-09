@@ -1,0 +1,46 @@
+<html>
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<title>Test AutoComplete</title> 
+		<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.custom.css"> 
+		<link rel="stylesheet" type="text/css" href="css/autocomplete.css"> 
+	</head> 
+
+	<body>
+			<div class="auto-complete-list">
+				<input id="to" type="text" ></input>
+			</div>				
+			
+			
+			<script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script> 
+			<script type="text/javascript" src="./js/jquery-ui-1.8.custom.min.js"></script> 
+			<script type="text/javascript"> 
+						$(function(){
+							console.log("Hello");
+							$("#to").autocomplete({								
+								source: function(req, add){
+									console.log("Getting source");
+										var suggestions = ["Sports", "Science Club", "Humanities", "Creative Writing",
+										            "Dancing", "Debate", "Singing", "Drama", "Musical Instrument", "Quiz", "Story Writing", "Choir", "Art", "Drawing", "Craft"];
+										add(suggestions);									
+								},
+								select: function(e, ui) {
+									console.log("Select");
+									var friend = ui.item.value,
+										span = $("<span>").text(friend),
+										a = $("<a>").addClass("remove").attr({
+											href: "javascript:",
+											title: "Remove " + friend
+										}).text("x").appendTo(span);
+									span.insertBefore("#to");
+								},
+								change: function() {
+									console.log("Change");
+									$("#to").val("").css("top", 2);
+								}
+							});
+						})
+			</script>
+	</body>
+	
+</html>
