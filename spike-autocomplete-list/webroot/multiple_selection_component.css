@@ -1,0 +1,73 @@
+body {
+	font-family:Verdana; 
+}
+
+.selector {
+	float:left;		
+}
+
+.multiselect-box {
+	float:left;			
+	margin-bottom:50px;
+	clear:both;
+}
+
+.multiselect-box input {
+	float:left;
+}
+
+.value-list {
+	width:500px;
+	height:200px;
+}
+
+.label {
+	float:left;
+	width:5em;
+	background: #DDDDDD;
+	margin-top:2px;
+}
+
+.options {			
+	float:left;
+	padding-top:4px;
+	padding:3px;
+	clear:both;
+}
+  .selected-item {
+	float:left;
+	padding-left:3px;
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-right:5px;
+	border:solid lightgrey 2px;
+   }
+
+.selected-combo-item {
+		float:left;
+		padding-left:3px;
+		padding-top:3px;
+		padding-bottom:3px;
+		margin-right:5px;				
+		clear:both;
+    }
+
+.action {
+	float:left;
+	padding-top:1px;
+	padding-left:5px;
+	padding-right:5px;
+}
+   a.remove {  /* becasreful this works in our supprted browsers */
+	padding:2px;
+	margin:2px;
+	text-decoration:none;
+	background:red;
+	color:white;
+	font:bold;
+}
+
+.value-list {
+	float:left;
+	border:2px solid green;
+}
