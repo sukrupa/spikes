@@ -17,8 +17,10 @@ body {
 }
 
 .value-list {
-	width:500px;
+/*	width:500px;
 	height:200px;
+	overflow:scroll;*/
+	float:left;
 }
 
 .label {
@@ -67,7 +69,3 @@ body {
 	font:bold;
 }
 
-.value-list {
-	float:left;
-	border:2px solid green;
-}
