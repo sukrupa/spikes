@@ -16,6 +16,7 @@ body {
 	float:left;
 }
 
+
 .value-list {
 /*	width:500px;
 	height:200px;
@@ -23,7 +24,7 @@ body {
 	float:left;
 }
 
-.label {
+.fieldlabel {
 	float:left;
 	width:5em;
 	background: #DDDDDD;

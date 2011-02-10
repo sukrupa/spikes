@@ -2,55 +2,37 @@
     <head>
         <link rel="stylesheet" type="text/css" href="multiple_selection_component.css" /> 
         <script type="text/javascript" src="multiple_selection_component.js"></script>
-    </head>
-    
-    <p>
-        <a href="javascript:multiselect.ping();">Click me!</a>
-    </p>
+    </head> 
     
     <div id="content">
-        <div class="multiselect-box">		            
-            <input id="input-text" type="text" value="Humanities"></input>
-            <input type="button" value="Add" onclick="javascript:multiselect.addTag('input-text', 'value-list-1')"></input>
+        <div class="multiselect-box">
+            <div class="fieldlabel">Talents:</div>	
+            <div class="selector">			                    
+                <div class="options">
+        			<select name="talent" onchange="javascript:multiselect.addTag(this, 'value-list-1')">
+        				<option value="Add">Add ...</option>
+        				<option value="Sports">Sports</option>
+        				<option value="Science Club">Science Club</option>
+        				<option value="Humanities">Humanities</option>
+        				<option value="Creative Writing">Creative Writing</option>
+        				<option value="Dancing">Dancing</option>
+        				<option value="Debate">Debate</option>
+        				<option value="Singing">Singing</option>
+        				<option value="Drama">Drama</option>
+        				<option value="Musical Instrument">Musical Instrument</option>
+        				<option value="Quiz">Quiz</option>
+        				<option value="Story Writing">Story Writing</option>
+        				<option value="Choir">Choir</option>
+        				<option value="Art">Art</option>
+        				<option value="Drawing">Drawing</option>
+        				<option value="Craft">Craft</option>
+        			</select>		
+        		</div>
+		    
+                <div id="value-list-1" class="value-list"></div>
+            </div>
         </div>
-        
-        <div id="value-list-1" class="value-list">
-        </div>
-        
-    	<div class="multiselect-box">		
-    		<div class="label">Talents:</div>				
-    		<div class="selector">
-    			<div class="options">
-    				<select name="talent">
-    					<option value="">Add ...</option>
-    					<option value="Sports">Sports</option>
-    					<option value="Science Club">Science Club</option>
-    					<option value="Humanities">Humanities</option>
-    					<option value="Creative Writing">Creative Writing</option>
-    					<option value="Dancing">Dancing</option>
-    					<option value="Debate">Debate</option>
-    					<option value="Singing">Singing</option>
-    					<option value="Drama">Drama</option>
-    					<option value="Musical Instrument">Musical Instrument</option>
-    					<option value="Quiz">Quiz</option>
-    					<option value="Story Writing">Story Writing</option>
-    					<option value="Choir">Choir</option>
-    					<option value="Art">Art</option>
-    					<option value="Drawing">Drawing</option>
-    					<option value="Craft">Craft</option>
-    				</select>		
-    			</div>
-
-    			<div class="value-list">
-    				<div class="selected-item">Humanities<a class="remove" href="javascript:" title="Remove Humanities">x</a></div>
-    				<div class="selected-item">Debate<a class="remove" href="javascript:" title="Remove Debate">x</a></div>
-    				<div class="selected-item">Science<a class="remove" href="javascript:" title="Remove Science">x</a></div>
-    			</div>
-
-
-    		</div>
-    	</div>
-        
+    
     </div>
 </html>
 
