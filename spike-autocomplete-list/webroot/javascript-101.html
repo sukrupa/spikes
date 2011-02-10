@@ -1,0 +1,67 @@
+<html>
+
+<head>
+	<style type="text/css">
+		body {
+			font-family:Verdana;
+		}
+	</style>
+</head>
+
+<body>
+	<script id="global-functions" type="text/javascript">								
+		function sayHello(name) {
+			alert("Hello " + name + " from a global function");
+		}
+		
+		function sayHelloWithAForm(form) {
+			sayHello(form.personName.value);
+		}
+	</script>
+
+
+
+	<h1>This page demonstrates some basic javascript functions</h1>
+	
+	<pre class="javascript code">
+&lt;script id="global-functions" type="text/javascript"&gt;							
+    function sayHello(name) {
+        alert("Hello " + name + " from a global function");
+    }
+&lt;/script&gt;
+
+&lt;p&gt;To call a global function : &lt;code&gt;sayHello("Jim")&lt;/code&gt;, click &lt;a href="javascript:sayHello('Jim');"&gt;here&lt;/a&gt;
+
+	</pre>
+	
+	<p>To call a global function : <code>sayHello("Jim")</code>, click <a href="javascript:sayHello('Jim');">here</a>
+		
+	<p>You could maybe accept input from a form:</p>
+		
+<pre class="javascript code">
+&lt;form id="say-hello-form" action=""&gt;
+	&lt;input type="text" name="personName" value="Linda"&gt;&lt;/input&gt;
+	&lt;input type="button" value="Say Hello" onclick="sayHelloWithAForm(this.form);"&gt;&lt;/input&gt;
+&lt;/form&gt;
+
+&lt;script id="global-functions" type="text/javascript"&gt;							
+function sayHelloWithAForm(form) {
+	sayHello(form.personName.value);
+}
+&lt;/script&gt;
+</pre>
+
+<div id="hello-demo">
+	<form id="say-hello-form" action="">
+		<input type="text" name="personName" value="Linda"></input>
+		<input type="button" value="Say Hello" onclick="sayHelloWithAForm(this.form);"></input>
+	</form>
+</div>
+
+	
+	<p>
+		But, you don't want to have functions floating around in the global namespace, so you can create
+	</p>
+</body>
+
+</html>
