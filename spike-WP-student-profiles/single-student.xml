@@ -1,0 +1,10 @@
+<?xml version='1.0' standalone='yes'?>
+<student>
+  <id>1</id>
+  <name>Mr. Coder</name>
+  <dateOfBirth>11-11-2005</dateOfBirth>
+  <thumb>link/to/thumb1.jpg</thumb>
+  <picture>link/to/actual/picture.jpg</picture>
+  <class>PreSchool</class>
+  <talents>Acting, Dancing, Music</talents>
+</student>
