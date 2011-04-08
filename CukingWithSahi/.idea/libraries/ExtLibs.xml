@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ExtLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/cuke4duke-0.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sahi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-4.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

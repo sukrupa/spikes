@@ -1,0 +1,46 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="sukrupa" default="cucumber" basedir=".">
+    <property name="jruby.home" value="${basedir}/lib/.jruby"/>
+
+	<path id="compile.classpath">
+		<fileset dir="lib">
+		  <include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="jruby.classpath">
+		<fileset dir="lib">
+		  <include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="clean">
+        <delete dir="target/test-classes"/>
+	</target>
+	
+	<target name="install-gems">
+        <taskdef name="gem" classname="cuke4duke.ant.GemTask" classpathref="compile.classpath"/>
+        <gem args="install cuke4duke --version 0.4.2"/>
+    </target>
+
+    <target name="download-jars">
+        <ivy:configure file="${basedir}/ivysettings.xml" />
+        <ivy:retrieve file="${basedir}/ivy.xml"/>
+    </target>
+	
+    <target name="compile:steps">
+        <mkdir dir="target/test-classes"/>
+        <javac srcdir="src" destdir="target/test-classes" classpathref="compile.classpath" encoding="UTF-8"/>
+    </target>
+	
+	<target name="cucumber" depends="clean,compile:steps" description="Run Cucumber Tests">
+		<mkdir dir="target/junit-report"/>
+		<taskdef name="cucumber" classname="cuke4duke.ant.CucumberTask" classpathref="compile.classpath"/>
+		<cucumber
+			args="--verbose --require target/test-classes --format pretty --format junit --out target/junit-report features"
+			objectFactory="pico">
+			<classpath>
+				<pathelement location="target/test-classes"/>
+			</classpath>
+		</cucumber>
+	</target>
+</project>	
