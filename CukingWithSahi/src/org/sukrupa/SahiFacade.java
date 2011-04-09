@@ -4,9 +4,6 @@ import cuke4duke.annotation.After;
 import net.sf.sahi.client.Browser;
 import net.sf.sahi.config.Configuration;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-
 public class SahiFacade {
 
     private Browser browser;

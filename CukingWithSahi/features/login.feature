@@ -5,6 +5,7 @@ Feature: Login
     When I click on the "Logout" link
     Then I should be logged out
 
+	@logout
     Scenario: Login with valid credentials
     Given I am on the login page
     When I log in using "admin" and "password"

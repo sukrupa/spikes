@@ -1,27 +1,19 @@
-package org.sukrupa;
+package org.sukrupa.schooladmin.steps;
 
-import cuke4duke.annotation.After;
-import cuke4duke.annotation.I18n.EN.*;
-import net.sf.sahi.client.Browser;
+import cuke4duke.annotation.I18n.EN.Given;
+import cuke4duke.annotation.I18n.EN.When;
+import cuke4duke.annotation.I18n.EN.Then;
+import org.sukrupa.schooladmin.On;
 import org.sukrupa.schooladmin.pages.LoginPage;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
-public class LoginPageSteps {
+public class LoginPageSteps extends BaseSteps {
 
     private LoginPage loginPage;
-/*
-    private Browser browser;
 
-    public LoginPageSteps(SahiFacade facade) {
-        browser = facade.getBrowser();
-    }
-*/
     @Given("^I am on the login page$")
     public void iAmOnTheLoginPage() {
         loginPage = On.loginPage();
-//        browser.navigateTo("http://localhost:8080");
     }
     
     @Given("^I am logged in$")
@@ -43,13 +35,12 @@ public class LoginPageSteps {
 
     @When("I click on the \"Logout\" link")
     public void iClickOnTheLogoutLink() {
-        loginPage.doLogout();
+        loginPage.doLogout().isLoggedOut();
     }
 
     @Then("^I should be logged in$")
     public void iShouldBeLoggedIn() {
         boolean isLoggedIn = loginPage.isLoggedIn();
-        loginPage.doLogout();
         assertEquals(isLoggedIn, true);
     }
 

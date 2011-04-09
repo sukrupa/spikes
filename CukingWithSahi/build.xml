@@ -32,6 +32,18 @@
         <javac srcdir="src" destdir="target/test-classes" classpathref="compile.classpath" encoding="UTF-8"/>
     </target>
 	
+	<target name="scenario" depends="clean,compile:steps" description="Run Cucumber Tests">
+		<mkdir dir="target/junit-report"/>
+		<taskdef name="cucumber" classname="cuke4duke.ant.CucumberTask" classpathref="compile.classpath"/>
+		<cucumber
+			args="--verbose --require target/test-classes --format pretty --format junit --out target/junit-report features/login.feature:3"
+			objectFactory="pico">
+			<classpath>
+				<pathelement location="target/test-classes"/>
+			</classpath>
+		</cucumber>
+	</target>
+
 	<target name="cucumber" depends="clean,compile:steps" description="Run Cucumber Tests">
 		<mkdir dir="target/junit-report"/>
 		<taskdef name="cucumber" classname="cuke4duke.ant.CucumberTask" classpathref="compile.classpath"/>
