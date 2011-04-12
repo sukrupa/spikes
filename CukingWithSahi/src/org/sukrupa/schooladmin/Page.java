@@ -9,6 +9,11 @@ import net.sf.sahi.client.ElementStub;
 public class Page {
     public static Browser browser;
 
+    // These 2 are placed here just for convenience.
+    public static final String admin = "admin123";
+    public static final String password = "krusat1324";
+    public static final String baseURL = "http://staging.school.sukrupa.org";
+
     public Page(Browser _browser) {
         browser = _browser;
     }

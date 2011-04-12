@@ -19,7 +19,8 @@ public class LoginPageSteps extends BaseSteps {
     @Given("^I am logged in$")
     public void iAmLoggedIn() {
         iAmOnTheLoginPage();
-        iLogInWith("admin", "password");
+        iLogInWith("admin123", "krusat1324");
+//        iLogInWith("admin", "password");
     }
 
     @When("^I log in using \"([^\"]*)\" and \"([^\"]+)\"$")

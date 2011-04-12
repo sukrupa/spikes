@@ -12,4 +12,9 @@ public class HomePage extends Page {
     public boolean isSideMenuItemVisible(String menuText) {
     	return browser.link(menuText).isVisible();
     }
+
+    public StudentSearchPage searchStudents() {
+        browser.link("Search Students").click();
+        return new StudentSearchPage(browser);
+    }
 }

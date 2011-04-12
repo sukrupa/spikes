@@ -5,6 +5,7 @@ import net.sf.sahi.client.Browser;
 import org.sukrupa.SahiFacade;
 import org.sukrupa.schooladmin.pages.HomePage;
 import org.sukrupa.schooladmin.pages.LoginPage;
+import org.sukrupa.schooladmin.pages.StudentSearchPage;
 
 public class On {
     private static Browser browser = getBrowser();
@@ -24,6 +25,10 @@ public class On {
     }
     
     public static HomePage homePage() {
-    	return loginPage().doLogin("admin", "password");
+    	return loginPage().doLogin(Page.admin, Page.password);
+    }
+
+    public static StudentSearchPage studentSearchPage() {
+        return homePage().searchStudents();
     }
 }

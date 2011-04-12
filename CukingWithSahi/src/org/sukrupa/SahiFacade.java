@@ -7,21 +7,16 @@ import net.sf.sahi.config.Configuration;
 public class SahiFacade {
 
     private Browser browser;
+    private String browserName;
 
     public Browser getBrowser() {
         if (browser == null) {
-            String sahiBase = "c:\\devsw\\sahi"; // where Sahi is installed or unzipped
-            String userDataDirectory = "c:\\devsw\\sahi\\userdata"; //path to the userdata directory
-            Configuration.initJava(sahiBase, userDataDirectory); // Sets up configuration for proxy. Sets Controller to java mode.
-
-            String browserPath = "C:\\Program Files\\Mozilla Firefox 4.0\\firefox.exe";
-            String browserProcessName = "firefox.exe";
-            String browserOption = "-profile " + userDataDirectory + "/browser/ff/profiles/sahi0 -no-remote";
-
-            browserOption = browserOption.replaceAll("/", "\\\\");
+            // Sets up configuration for proxy. Sets Controller to java mode.
+            Configuration.initJava(SahiConfiguration.SAHI_BASE, SahiConfiguration.SAHI_USERDATA);
 
             // Create a browser and open it
-            browser = new Browser(browserPath, browserProcessName, browserOption);
+            browser = new Browser(SahiConfiguration.BROWSER_PATH, SahiConfiguration.BROWSER_PROCESS,
+                    SahiConfiguration.BROWSER_OPTIONS);
             browser.open();
         }
         return browser;

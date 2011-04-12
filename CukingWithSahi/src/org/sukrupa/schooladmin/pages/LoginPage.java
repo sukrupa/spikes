@@ -7,7 +7,7 @@ import org.sukrupa.schooladmin.Page;
 public class LoginPage extends Page {
     public LoginPage(Browser browser) {
         super(browser);
-        browser.navigateTo("http://localhost:8080/");
+        browser.navigateTo(Page.baseURL);
     }
 
     public String getErrorText() {

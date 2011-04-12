@@ -1,5 +1,6 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant" name="sukrupa" default="cucumber" basedir=".">
     <property name="jruby.home" value="${basedir}/lib/.jruby"/>
+    <property name="sahi-browser" value="ff"/>
 
 	<path id="compile.classpath">
 		<fileset dir="lib">
@@ -29,18 +30,19 @@
 	
     <target name="compile:steps">
         <mkdir dir="target/test-classes"/>
-        <javac srcdir="src" destdir="target/test-classes" classpathref="compile.classpath" encoding="UTF-8"/>
+        <javac srcdir="src" destdir="target/test-classes" classpathref="compile.classpath" encoding="UTF-8" includeantruntime="false"/>
     </target>
 	
 	<target name="scenario" depends="clean,compile:steps" description="Run Cucumber Tests">
 		<mkdir dir="target/junit-report"/>
 		<taskdef name="cucumber" classname="cuke4duke.ant.CucumberTask" classpathref="compile.classpath"/>
 		<cucumber
-			args="--verbose --require target/test-classes --format pretty --format junit --out target/junit-report features/login.feature:3"
+			args="--verbose --require target/test-classes --format pretty --format junit --out target/junit-report features/multiTalentSearch.feature:3"
 			objectFactory="pico">
 			<classpath>
 				<pathelement location="target/test-classes"/>
 			</classpath>
+            <sysproperty key="sahi-browser" value="${sahi-browser}"/>
 		</cucumber>
 	</target>
 
@@ -53,6 +55,7 @@
 			<classpath>
 				<pathelement location="target/test-classes"/>
 			</classpath>
+            <sysproperty key="sahi-browser" value="${sahi-browser}"/>
 		</cucumber>
 	</target>
 </project>	
