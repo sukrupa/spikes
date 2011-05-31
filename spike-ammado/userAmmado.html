@@ -40,13 +40,27 @@
 	<input type="hidden" name="beneficiaryId" value="488" />
 	<input type="hidden" name="apiKey" value="9CACC3AA-C207-4510-A553-461CBCA34ADB" />
 	<input type="hidden" name="onSuccess" value="http://www.sukrupa.org/"/>
-	<button id="submit" type="submit">Donate</button>
+	<button id="submit" type="button">Donate</button>
 	<script>
-		var data = {};
-		data.donorEmail = $("#donorEmail");
+
 		$("#submit").click(function(e){
-			$.post('./success.php',data);
+			
+			var submitData = {};
+			submitData.beneficiaryId = "118838";
+			submitData.apiKey  = "9CACC3AA-C207-4510-A553-461CBCA34ADB";
+			submitData.onSuccess = "http://beta.sukrupa.org/donation-success";
+			submitData.donorFirstName = $("#donorFirstName").val();
+			submitData.donorEmail = $("#donorEmail").val();
+			submitData.donationAmount = $("#amount10").val();
+			submitData.currencyCode = $("#currencyCode").val();
+
+			$.post("https://api.ammado.net/v1/donate",submitData,onSuccess);
 		});
+		
+		function onSuccess(result)
+		{
+			
+		}
 	</script>
 </form>
 
